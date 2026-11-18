@@ -1,44 +1,45 @@
-# SwiftUI MVP Skill
+# SwiftUI 分階段介面探索 Skill
 
-協助學員把已寫好的 Prompt 變成可操作的 SwiftUI iOS MVP。先從「價值、操作體驗、例外情況、取捨、驗收」各問一題，再根據回答安排功能順序並直接開發。
+承接學員從課堂網站複製的整段 Prompt，依序完成設計探索、單頁實作、同風格第二頁與 Navigation。學員可以從空資料夾開始；保留 `swiftui-mvp` 安裝名稱。
 
-## 下載到專案
+最終交付是能在 Xcode 開啟、編譯與執行的完整 SwiftUI iOS App。Go Wide 預覽圖是設計過程的產物，不取代最後的 App。
 
-在 AI Agent 開啟你的 SwiftUI 專案後，貼上：
+## 安裝
 
-```text
-幫我把 https://github.com/pennychen0/swiftui-mvp 裡的 swiftui-mvp 資料夾，完整下載到這個專案根目錄的 .agents/skills/ 裡，包含 SKILL.md 與 references 資料夾。若同名資料夾已存在，先告訴我，不要直接覆蓋。
-```
-
-下載後的結構應為：
+在 AI Agent 開啟本次工作資料夾後貼上：
 
 ```text
-你的專案/
-└── .agents/
-    └── skills/
-        └── swiftui-mvp/
-            ├── SKILL.md
-            └── references/
-                └── simulation-examples.md
+幫我把 https://github.com/pennychen0/swiftui-mvp 裡的 swiftui-mvp 資料夾，完整下載到這個工作資料夾的 .agents/skills/ 裡，包含 SKILL.md、references 與 scripts 資料夾。若同名資料夾已存在，先告訴我，不要直接覆蓋。
 ```
 
-若使用的 Agent 不支援此技能目錄，可請它直接閱讀 `.agents/skills/swiftui-mvp/SKILL.md` 並依照內容執行。
+不需要預先建立 Xcode 專案。Agent 不支援此技能目錄時，請它直接讀取 `.agents/skills/swiftui-mvp/SKILL.md`。
 
-## 使用方式
+## 課堂流程
 
-1. 準備已建立且能執行的 SwiftUI 專案。
-2. 將學習單上寫好的 Prompt 交給 Agent，並指定使用 `swiftui-mvp` Skill。
-3. 回答依照你的內容產生的五個問題。
-4. Agent 依回答決定功能範圍與開發順序，直接實作；後續細節由 AI 採用建議方案，使用者可隨時要求修改。
-5. 依交付的驗收任務操作 App，記錄下一輪改善項目。
+| 網站貼入的 Prompt | Agent 的產出 |
+| --- | --- |
+| 1. Go Wide | 同一個手機畫面的五張不同設計預覽圖，編號 1–5；不建立 Xcode 專案、不寫 SwiftUI。 |
+| 2. Remix | 根據學員指定的版本與元件整合風格，才建立／修改 SwiftUI 專案，實作第一個畫面；暫不新增第二頁或頁間 Navigation。 |
+| 3. 完成作品 | 沿用第一頁，新增同風格第二頁，再整合 Navigation 與返回。收到範例資料 Prompt 時，加入適當資料與「邊緣測試」Preview。 |
+| 4. 試用並上傳 | Agent 做可用的命令列檢查、準備交付；學員手動執行、試切換與返回、截圖並上傳。 |
+| 5. 上傳作品 | 準備作品說明、兩張執行截圖與可編輯專案資料夾。網站另要求真實內容截圖時，由學員提供素材並完成對應版本。 |
 
-第一輪在五題回答後立即開始計時，最晚 10 分鐘結束執行並交付目前成果。AI 自行排序與縮減功能，最晚第 7 分鐘停止新增功能，第 9 分鐘進入打包收尾；規劃、工具等待、建置、修正與打包都包含在時間內。若需求或環境讓核心任務無法完成，須如實列出未完成項目，不宣稱成功。
+每階段完成就停下等待下一份 Prompt；直接接手網站文字，不另開固定題數訪談。整體以課堂 30 分鐘目標及網站／使用者當次時間設定安排。
 
-## App 平台與交付規則
+**網站 Remix 模板需同步更新：** 截圖舊版要求「畫一張圖、先不要寫程式」，這次課堂要求已改為「整合選定風格並用 SwiftUI 實作第一個畫面，先不要新增第二頁或 Navigation」。若學員當次明確要求只出圖，Agent 仍須遵守，不會靜默改成寫程式。這份更新沒有修改課堂網站本身。
 
-- 使用 SwiftUI 建立 iPhone／iPad App，檢查 iOS target 與建置目的地，不改做 macOS 或 Mac Catalyst App。
-- 解壓縮後只需打開一個專案資料夾，就直接看到 .xcodeproj；需要 .xcworkspace 的專案會並列保留並註明開啟方式。
-- 提供不超過 200,000,000 bytes（200 MB）的 ZIP，排除建置快取與暫存檔，保留原始碼、資源與必要專案設定。
+## 執行限制與品質
+
+- 以下規則由 Agent 內部執行。對學員只呈現成果、具體修改與下一步，不主動說明 Skill 如何限制流程；遇到阻礙與尚未驗證項目仍如實說明。
+- 全程不用 Computer Use，不代操 Xcode、模擬器、瀏覽器或網站；允許檔案工具、圖片生成／非互動渲染、`xcodebuild`、`xcrun simctl` 等非 UI 控制方式。
+- 沒有產圖能力就如實說明，不用文字或 Xcode 程式冒充五張圖片；學員可依課堂安排找助教。
+- 遵循 Apple HIG，注意主次、元件用途、字體可讀性、點按區域、不同尺寸與兩頁風格一致。
+- 開發平台是 SwiftUI iPhone／iPad iOS App，不改做 macOS 或 Mac Catalyst。
+- 設計圖、Xcode Preview 與實際執行截圖分開標示，未操作的切換與返回不宣稱已驗證。
+
+## 120 MB 與 Xcode 入口
+
+完整交付資料夾的檔案內容總量、ZIP 大小及 ZIP 內未壓縮檔案總量，**各不得超過 120,000,000 bytes（120 MB）**。所有隨交付附上的原始碼、設定、資源、資料、文件、設計圖與截圖都計入，不只計算 Swift 檔案。
 
 ```text
 MyApp.zip
@@ -48,9 +49,19 @@ MyApp.zip
     └── README.md
 ```
 
+打開專案資料夾第一層就要看到真正的 `.xcodeproj`；必要的 `.xcworkspace` 並列保留。Remix 建立／接手後、交付副本、實際解壓後三次檢查入口；Go Wide 不建立專案。
+
+附帶檢查工具：
+
+```text
+python3 <skill路徑>/scripts/check_delivery.py <專案資料夾>
+python3 <skill路徑>/scripts/check_delivery.py <解壓後專案資料夾> --zip <ZIP路徑>
+```
+
+路徑含空白時需以引號包住。工具不操作 UI，也不證明引用、編譯與互動已通過。
+
 ## 內容
 
-- [Skill 指示](swiftui-mvp/SKILL.md)
-- [穿搭、朋友分帳與作業管理模擬案例](swiftui-mvp/references/simulation-examples.md)
-
-案例只示範提問深度與決策方式。實際五題必須根據使用者的內容重新設計，不能照抄範例，也不能把範例的假設回答當成使用者的決定。
+- [完整 Skill 指示](swiftui-mvp/SKILL.md)
+- [階段辨識與混合 Prompt 情境](swiftui-mvp/references/simulation-examples.md)
+- [入口、完整資料夾與 ZIP 大小檢查工具](swiftui-mvp/scripts/check_delivery.py)
