@@ -9,7 +9,9 @@
 在 AI Agent 開啟本次工作資料夾後貼上：
 
 ```text
-幫我把 https://github.com/pennychen0/swiftui-mvp 裡的 swiftui-mvp 資料夾，完整下載到這個工作資料夾的 .agents/skills/ 裡，包含 SKILL.md、references 與 scripts 資料夾。若同名資料夾已存在，先告訴我，不要直接覆蓋。
+幫我把 https://github.com/pennychen0/swiftui-mvp 裡的 swiftui-mvp 資料夾，從 main 分支完整下載到這個專案根目錄的 .agents/skills/ 裡，包含 SKILL.md、references 與 scripts 資料夾。
+
+若已有同名 Skill，請更新成倉庫最新版本，保留其他 Skill。
 ```
 
 不需要預先建立 Xcode 專案。Agent 不支援此技能目錄時，請它直接讀取 `.agents/skills/swiftui-mvp/SKILL.md`。
